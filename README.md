@@ -1,6 +1,6 @@
 # vue
 
-[Click here for Live Preview] (https://jazzy-kashata-b38e66.netlify.app/)
+[Click here for Live Preview](https://jazzy-kashata-b38e66.netlify.app/)
 
 ## Project setup
 ```
