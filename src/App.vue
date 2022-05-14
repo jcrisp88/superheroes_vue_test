@@ -1,5 +1,11 @@
 <template>
+<div class="page">
+  <nav>
+    <router-link :to="{ name: 'home', }">Home</router-link> |
+    <router-link :to="{ name: 'superhero', }">SuperHero</router-link>
+  </nav>
   <router-view/>
+</div>
 </template>
 
 <style lang="scss">
@@ -28,16 +34,31 @@ time, mark, audio, video {
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+.page{
+  margin-bottom: 5vh;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 0 5vw;
+}
+
+nav{
+  position: absolute;
+  right: 0;
+  margin:30px;
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+  }
+  .router-link-active{
+    color: firebrick;
+    text-decoration: underline;
   }
 }
 </style>

@@ -47,7 +47,7 @@ import { defineComponent } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useHeroStore } from '../stores/heroStore';
 
-import HeroCard from '../components/heroCard.vue'; // @ is an alias to /src
+import HeroCard from '../components/heroCard.vue';
 
 function partialMatch(arr: [], text: string) {
   return arr.filter((str: any) => str
@@ -119,10 +119,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.home{
-  margin-bottom: 5vh;
-}
-
 .page-banner {
   background: burlywood;
   padding: 10vh 5vw;
@@ -209,13 +205,6 @@ export default defineComponent({
       cursor: pointer;
     }
   }
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  padding: 0 5vw;
 }
 
 // Small devices (landscape phones, 576px and up)

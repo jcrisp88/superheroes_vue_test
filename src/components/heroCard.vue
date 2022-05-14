@@ -82,9 +82,6 @@ export default defineComponent({
   border-radius: 10px;
   position: relative;
 
-  h2{
-  }
-
   dl {
     display: flex;
     flex-wrap: wrap;
