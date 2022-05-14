@@ -32,7 +32,11 @@
     </div>
     <div class="container">
       <HeroCard
-        v-if="heroIsChosen"/>
+        v-if="heroIsChosen"
+        :id="chosenOption.id"
+        :name="chosenOption.name"
+        :biography="chosenOption.biography"
+        :image="chosenOption.image.url"/>
     </div>
   </div>
 </template>
@@ -113,6 +117,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.home{
+  margin-bottom: 5vh;
+}
+
 .page-banner {
   background: burlywood;
   padding: 10vh 5vw;
@@ -129,7 +137,7 @@ export default defineComponent({
   position: relative;
   display: flex;
   background: #fff;
-  z-index:1;
+  z-index:10;
   border-radius: 10px;
 
   label {
@@ -175,7 +183,7 @@ export default defineComponent({
   width: 100%;
   max-height: 350px;
   overflow: auto;
-  z-index:0;
+  z-index:9;
   position: absolute;
   right: 0;
   box-sizing: border-box;
@@ -205,33 +213,34 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  padding: 0 5vw;
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .container {
-    width: 500px
+    width: 500px;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .container {
-    width: 700px
+    width: 700px;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container {
-    width: 900px
+    width: 900px;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .container {
-    width: 1000px
+    width: 1000px;
   }
 }
 
