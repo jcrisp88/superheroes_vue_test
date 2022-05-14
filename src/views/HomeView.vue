@@ -12,7 +12,7 @@
                 autocomplete="off" />
             </label>
             <button class="search-button" @click="submitSearch">
-              <img srcset="https://img.icons8.com/material-outlined/344/search--v1.png" alt="icon" loading="lazy"
+              <img src="https://img.icons8.com/material-outlined/344/search--v1.png" alt="icon"
                 height="20">
             </button>
           </form>
@@ -36,7 +36,8 @@
         :id="chosenOption.id"
         :name="chosenOption.name"
         :biography="chosenOption.biography"
-        :image="chosenOption.image.url"/>
+        :image="chosenOption.image.url"
+        :heroObject="chosenOption"/>
     </div>
   </div>
 </template>
@@ -105,6 +106,7 @@ export default defineComponent({
       this.setHeroNameSearch(0);
     },
     async setHeroNameSearch(index:number) {
+      this.heroIsChosen = false;
       this.chosenOption = await this.getHeroDetailsByName(this.suggestedResults[index]);
       this.reset();
       this.heroIsChosen = true;

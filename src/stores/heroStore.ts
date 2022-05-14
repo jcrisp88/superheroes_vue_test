@@ -9,6 +9,7 @@ export const useHeroStore = defineStore({
   id: 'heroStore',
   state: () => ({
     superHeros: [] as any,
+    favourites: [] as any,
   }),
   getters: {
     allHeroNames(state) {
@@ -39,6 +40,16 @@ export const useHeroStore = defineStore({
         .catch((error) => {
           throw error;
         });
+    },
+    toggleFavouriteHero(hero:any) {
+      const heroIndex = this.favourites
+        .findIndex((item:any) => item.id === hero.id);
+      if (heroIndex !== -1) {
+        this.favourites
+          .splice(heroIndex, 1);
+        return;
+      }
+      this.favourites.push(hero);
     },
   },
 });
