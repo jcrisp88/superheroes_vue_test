@@ -20,6 +20,7 @@
       height="24"
       @click="toggleFavourite"
       @keydown.space="toggleFavourite"
+      data-test="favourite-button"
       ></span>
   </div>
 </template>
@@ -31,6 +32,9 @@ import { useHeroStore } from '../stores/heroStore';
 export default defineComponent({
   name: 'HeroCard',
   setup() {
+    // would like to have kept this in the parent
+    // but I wanted to get the data into pinia for
+    // the test.
     const store = useHeroStore();
     const { favourites } = storeToRefs(store);
     const { toggleFavouriteHero } = store;
